@@ -1,0 +1,7 @@
+Found 3 security vulnerability advisories affecting 1 package:
+| Severity          | high                                                                             |
+| CVE               | CVE-2021-34551                                                                   |
+| Severity          | high                                                                             |
+| CVE               | CVE-2021-3603                                                                    |
+| Severity          | critical                                                                         |
+| CVE               | CVE-2020-36326                                                                   |

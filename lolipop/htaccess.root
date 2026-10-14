@@ -1,0 +1,14 @@
+# すばら３商店：公開ディレクトリの .htaccess（点検後に追加）
+Options -Indexes
+# 控え・ダンプ・圧縮ファイル・ドットファイルは配信しない
+<FilesMatch "(\.(bak|old|orig|sql|gz|zip|tar|log|env)|~)$|^\.">
+    Require all denied
+</FilesMatch>
+<Files "phpinfo.php">
+    Require all denied
+</Files>
+<IfModule mod_headers.c>
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+    Header always set X-Robots-Tag "noindex"
+</IfModule>

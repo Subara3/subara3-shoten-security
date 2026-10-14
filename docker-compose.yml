@@ -1,0 +1,22 @@
+# 点検前の「すばら３商店」。手元でだけ動かす（127.0.0.1 限定）
+services:
+  web:
+    build: ./docker/web
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./legacy:/var/www/html
+      - ./logs:/var/log/apache2
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass-local-only
+      MYSQL_DATABASE: shop
+      MYSQL_USER: shop
+      MYSQL_PASSWORD: shop-local-only
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d:ro

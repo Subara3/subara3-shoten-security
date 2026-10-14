@@ -1,0 +1,3 @@
+./backup/shop_20190401.sql
+./config.php.bak
+./phpinfo.php

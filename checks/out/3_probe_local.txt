@@ -1,0 +1,18 @@
+## 点検前 :8080
+//                           200
+/backup/                     200
+/backup/shop_20190401.sql    200
+/config.php.bak              200
+/phpinfo.php                 200
+/admin/login.php             200
+/.htaccess                   403
+X-Powered-By: PHP/7.4.33
+## 点検後 :8081
+//                           200
+/backup/                     404
+/backup/shop_20190401.sql    404
+/config.php.bak              403
+/phpinfo.php                 403
+/admin/login.php             403
+/.htaccess                   403
+X-Powered-By: (なし)

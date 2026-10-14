@@ -1,0 +1,16 @@
+# 点検後の「すばら３商店」。DBは点検前と同じものを使う
+services:
+  web-fixed:
+    build: ./docker/web-fixed
+    ports:
+      - "127.0.0.1:8081:80"
+    volumes:
+      - ./fixed/public:/var/www/html
+      - ./fixed/app:/var/www/app:ro
+    environment:
+      SHOP_DB_PASS: shop-local-only
+    networks: [shopnet]
+networks:
+  shopnet:
+    external: true
+    name: subara3-shoten-security_default

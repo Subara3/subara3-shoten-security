@@ -1,0 +1,4 @@
+    101 /phpinfo.php
+     39 /config.php.bak
+      1 /backup/shop_20190401.sql
+      1 /backup/

@@ -1,0 +1,8 @@
+# 公開ディレクトリに置いてよいのはアプリのファイルだけ。控えやダンプが紛れ込んでも配信しない
+Options -Indexes
+<FilesMatch "(\.(bak|old|orig|sql|gz|zip|tar|log|env)|~)$|^\.">
+    Require all denied
+</FilesMatch>
+<Files "phpinfo.php">
+    Require all denied
+</Files>

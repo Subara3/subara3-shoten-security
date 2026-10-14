@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Date: Wed, 14 Oct 2026 10:35:44 GMT
+Server: Apache/2.4.54 (Debian)
+X-Powered-By: PHP/7.4.33
+Set-Cookie: PHPSESSID=4cace5b29ccc721a1a07bab0316041a9; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+

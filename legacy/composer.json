@@ -1,0 +1,9 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "6.4.0"
+    },
+    "config": {
+        "platform": { "php": "7.4.33" },
+        "policy": { "advisories": { "block": false } }
+    }
+}

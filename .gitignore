@@ -1,0 +1,14 @@
+# 生成物（tools/ のスクリプトで作り直せる）
+db/01_schema_data.sql
+logs/*
+!logs/.gitkeep
+legacy/backup/
+evidence/
+legacy/vendor/
+fixed/app/vendor/
+
+# 手元専用
+article/
+lolipop/TARGET_DIR.txt
+lolipop/put.py
+lolipop/*_probe.txt

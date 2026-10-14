@@ -1,0 +1,18 @@
+<?php
+// すばら３商店 設定（2019年 制作会社納品）
+define('DB_HOST', 'db');
+define('DB_USER', 'shop');
+define('DB_PASS', 'shop-local-only');
+define('DB_NAME', 'shop');
+define('SHOP_NAME', 'すばら３商店');
+
+function db() {
+    static $db = null;
+    if ($db === null) {
+        $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        mysqli_set_charset($db, 'utf8mb4');
+    }
+    return $db;
+}
+function h($s) { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
+session_start();

@@ -1,4 +1,4 @@
-# ロリポップでの実測（2026-10-14、subara3.com/<TARGET_DIR>/、中身はダミーだけ）
+# ロリポップでの実測（2026-10-14、example.com/<TARGET_DIR>/、中身はダミーだけ）
 
 | URL | .htaccess なし | .htaccess あり |
 |---|---|---|

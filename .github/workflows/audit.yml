@@ -1,0 +1,31 @@
+name: audit
+
+# 点検を一度きりにせず、継続して気づくための仕組み。
+# push のたびと、毎週月曜に、依存ライブラリの脆弱性と不審なPHPを確かめる。
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: PHP と composer を用意する
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+
+      - name: 依存ライブラリの脆弱性（点検後のロックファイル）
+        working-directory: fixed/app
+        run: composer audit --locked --no-interaction
+
+      - name: 不審なPHPが公開ディレクトリに紛れていないか
+        run: |
+          out=$(sh checks/2-1h_suspicious_php.sh fixed/public)
+          echo "$out"
+          echo "$out" | grep -q '見つかりませんでした' || { echo '::error::不審なPHPの候補が見つかりました'; exit 1; }
